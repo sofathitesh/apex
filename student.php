@@ -654,10 +654,13 @@ class Student extends Admin_Controller {
 							$sub_c_ar = explode(" ", trim($subject_code));
 							$sec_code = end($sub_c_ar);
 							
-								array_pop($sub_c_ar);
-								array_push($sub_c_ar, $section_name);
+								//array_pop($sub_c_ar);
+
+								//array_push($sub_c_ar, $section_name);
 								$new_sub_code = implode(" ", $sub_c_ar);
+
 								$new_sub_data = $this->subject_m->get_order_by_subject(array("subject_code"=>$new_sub_code,"classesID"=>$this->input->post("classesID"),"sectionID"=>$section_arr[$key]));
+print_r($new_sub_data);
 
 								$sub_ject[$key] = $new_sub_data[0]->subjectID;
 								$scount = 0;
@@ -686,6 +689,7 @@ class Student extends Admin_Controller {
 						
 					}
 
+					if(count($sub_ject)>0 && count($section_arr)>0){
 
 					$section = $this->section_m->get_section($sectionID);
 
@@ -1144,6 +1148,9 @@ class Student extends Admin_Controller {
 						echo "ok";
 
 					}
+                                        }else{
+                                         echo "ErrorSubject";
+                                        }
 				}
 
 			} else {
