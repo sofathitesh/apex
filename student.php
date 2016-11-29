@@ -686,7 +686,7 @@ class Student extends Admin_Controller {
 						
 					}
 
-					
+					if(count($sub_ject)>0 && count($section_arr)>0){
 
 					$section = $this->section_m->get_section($sectionID);
 
@@ -779,7 +779,7 @@ class Student extends Admin_Controller {
 
 					$array["studentactive"] = 1;
 
-					$array["subject"] = $sub_section_str;
+					echo $array["subject"] = $sub_section_str;
 
 					$array["ic_no"] = $this->input->post('ic_no');
 
@@ -1145,7 +1145,9 @@ class Student extends Admin_Controller {
 						echo "ok";
 
 					}
-
+                                        }else{
+                                         echo "ErrorSubject";
+                                        }
 				}
 
 			} else {
