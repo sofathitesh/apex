@@ -673,8 +673,8 @@ class Student extends Admin_Controller {
 									}
 								}
 								if($scount >= $new_sub_data[0]->studentLimit){
-									unset($sub_ject[$key]);
-									unset($section_arr[$key]);
+									//unset($sub_ject[$key]);
+									//unset($section_arr[$key]);
 								}
 							
 							/*echo "<pre>";
@@ -686,7 +686,6 @@ class Student extends Admin_Controller {
 						
 					}
 
-					if(count($sub_ject)>0 && count($section_arr)>0){
 
 					$section = $this->section_m->get_section($sectionID);
 
@@ -1145,9 +1144,6 @@ class Student extends Admin_Controller {
 						echo "ok";
 
 					}
-                                        }else{
-                                         echo "ErrorSubject";
-                                        }
 				}
 
 			} else {
